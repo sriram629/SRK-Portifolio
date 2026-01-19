@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  /* Using 'brand' prefix as you requested */
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-border: var(--brand-border);
+}
+
+@layer base {
+  :root {
+    --brand-bg: #ffffff;
+    --brand-text: #000000;
+    --brand-muted: #4b5563;
+    --brand-border: #000000;
+  }
+
+  .dark {
+    --brand-bg: #000000;
+    --brand-text: #ffffff;
+    --brand-muted: #9ca3af;
+    --brand-border: #ffffff;
+  }
+
+  html,
+  body {
+    /* Set colors using variables with a clear fallback */
+    background-color: var(--brand-bg) !important;
+    color: var(--brand-text) !important;
+    @apply transition-colors duration-500 antialiased;
+    min-height: 100vh;
+  }
+}
+
+.hero-image-container {
+  @apply transition-all duration-700 grayscale hover:grayscale-0 border-l;
+  border-color: var(--brand-border);
+}
