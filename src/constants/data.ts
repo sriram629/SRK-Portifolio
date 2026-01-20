@@ -231,7 +231,7 @@ export const DATA: PortfolioData = {
       techStack: ["JavaScript", "HTML5", "CSS3", "Web Storage API"],
     },
   ],
-  resumeUrl: "/Resume.pdf",
+  resumeUrl: "/SRK_AI_FullStackDev_Resume.pdf",
   email: "maddipatisriramakrishna@gmail.com",
   location: "Montgomery, Alabama",
   availability: "Open for opportunities",
