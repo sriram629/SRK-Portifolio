@@ -16,20 +16,18 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* Accordion Container */}
         <div className="space-y-0">
           {DATA.projects.map((project, index) => (
             <div
               key={index}
               className="group border-b border-brand-border overflow-hidden transition-all duration-700 ease-in-out"
             >
-              {/* Project Header (Always Visible) */}
               <div className="flex justify-between items-center py-10 cursor-default">
                 <div className="flex items-baseline gap-8">
                   <span className="font-mono text-sm text-brand-muted">
                     0{index + 1}
                   </span>
-                  <h3 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase group-hover:italic transition-all">
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-tighter uppercase group-hover:italic transition-all">
                     {project.name}
                   </h3>
                 </div>

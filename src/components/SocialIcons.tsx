@@ -2,7 +2,7 @@ import { DATA } from "../constants/data";
 
 const SocialIcons = () => {
   return (
-    <div className="fixed left-6 md:left-12 bottom-0 z-100 flex flex-col items-center gap-8 pb-12 mix-blend-difference">
+    <div className="hidden md:flex fixed left-6 md:left-12 bottom-0 z-100 flex-col items-center gap-8 pb-12 mix-blend-difference">
       {DATA.socials.map((social) => (
         <a
           key={social.name}
