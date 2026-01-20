@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import { DATA } from "../constants/data";
 import { ChevronDown } from "lucide-react";
 
@@ -47,22 +48,31 @@ const Projects = () => {
       className="bg-brand-bg text-brand-text py-24 px-6 md:px-24"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 border-b border-brand-border pb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-20 border-b border-brand-border pb-10"
+        >
           <p className="font-mono text-xs uppercase tracking-[0.4em] text-brand-muted mb-4">
             Selected Works
           </p>
           <h2 className="text-5xl md:text-8xl font-bold tracking-tighter uppercase">
             Projects
           </h2>
-        </div>
+        </motion.div>
 
         <div className="space-y-0">
           {DATA.projects.map((project, index) => {
             const isMobileOpen = mobileExpandedIndex === index;
 
             return (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
                 onClick={() => handleMobileClick(index)}
                 className={`group border-b border-brand-border overflow-hidden transition-all duration-700 ease-in-out ${
                   isMobileOpen ? "is-mobile-expanded" : ""
@@ -164,7 +174,7 @@ const Projects = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

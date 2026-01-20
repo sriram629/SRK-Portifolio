@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Cursor from "./components/Cursur";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <main className="relative min-h-screen bg-brand-bg transition-colors duration-500 overflow-hidden">
+      <Cursor />
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <SocialIcons />
       <Hero />
