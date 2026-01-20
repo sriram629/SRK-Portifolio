@@ -1,7 +1,6 @@
 import { DATA } from "../constants/data";
 
 const Experience = () => {
-  // Mapping through the array since experience: Experience[]
   return (
     <section
       id="experience"
@@ -9,17 +8,16 @@ const Experience = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <p className="font-mono text-xs uppercase tracking-[0.4em] text-brand-muted mb-4 text-center md:text-left">
+          <p className="font-mono text-xs uppercase tracking-[0.4em] text-brand-muted mb-4  md:text-left">
             Professional Experience
           </p>
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-brand-text text-center md:text-left">
+          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-brand-text  md:text-left">
             WORK.
           </h2>
         </div>
 
         {DATA.experience.map((exp, index) => (
           <div key={index} className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Left: Company & Role */}
             <div className="lg:col-span-4">
               <h3 className="text-3xl font-bold text-brand-text uppercase">
                 {exp.company}
@@ -43,7 +41,6 @@ const Experience = () => {
               </div>
             </div>
 
-            {/* Right: Highlights */}
             <div className="lg:col-span-8 space-y-12">
               <p className="text-xl text-brand-text font-light leading-relaxed">
                 {exp.summary}

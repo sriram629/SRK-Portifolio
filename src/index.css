@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Using 'brand' prefix as you requested */
   --color-brand-bg: var(--brand-bg);
   --color-brand-text: var(--brand-text);
   --color-brand-muted: var(--brand-muted);
@@ -25,7 +24,6 @@
 
   html,
   body {
-    /* Set colors using variables with a clear fallback */
     background-color: var(--brand-bg) !important;
     color: var(--brand-text) !important;
     @apply transition-colors duration-500 antialiased;

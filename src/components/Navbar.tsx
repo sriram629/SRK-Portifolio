@@ -93,7 +93,7 @@ const Navbar = ({ isDark, setIsDark }: NavbarProps) => {
       <div
         className={`fixed inset-0 z-90 flex flex-col items-center justify-center transition-all duration-700 ease-in-out md:hidden ${
           isOpen
-            ? "translate-y-0 opacity-100 backdrop-blur-xl bg-brand-bg/90"
+            ? "translate-y-0 opacity-100 backdrop-blur-xl bg-brand-bg/50"
             : "-translate-y-full opacity-0 backdrop-blur-none bg-transparent"
         }`}
       >
