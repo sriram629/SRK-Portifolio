@@ -12,7 +12,6 @@ const Contact = () => {
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-          {/* Left Side: The Form */}
           <div className="space-y-8">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none mb-12">
               SEND A <br />
@@ -66,7 +65,6 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Right Side: Direct Link & Info */}
           <div className="flex flex-col justify-between">
             <div className="space-y-12">
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none opacity-20">
@@ -96,7 +94,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Socials & Copyright */}
             <div className="mt-24 pt-12 border-t border-brand-bg/10 flex flex-col sm:flex-row justify-between gap-6 font-mono text-[10px] uppercase tracking-widest opacity-60">
               <div className="flex gap-8">
                 {DATA.socials.map((s) => (
@@ -111,7 +108,7 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-              <p>© 2026 {DATA.name.split(" ")[0]}</p>
+              <p>© 2026 {DATA.name.split(" ").slice(0, -1).join(" ")}</p>
             </div>
           </div>
         </div>

@@ -37,3 +37,11 @@
   @apply transition-all duration-700 grayscale hover:grayscale-0 border-l;
   border-color: var(--brand-border);
 }
+
+#work,
+#about,
+#experience,
+#projects {
+  position: relative;
+  z-index: 10;
+}
