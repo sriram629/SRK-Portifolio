@@ -1,113 +1,46 @@
 # SRK Portfolio
 
-A modern, responsive personal portfolio website built with React, TypeScript, and Vite. This project showcases my professional work, technical skills, and projects with a clean and performant user interface.
+An original React + TypeScript portfolio with a procedural Three.js sculpture and GSAP scroll choreography.
 
-## 🚀 Live Demo
+## Local development
 
-[View Portfolio](https://srk-portifolio.vercel.app)
-
-## ✨ Features
-
-- **Modern Tech Stack**: Built with React 18, TypeScript, and Vite for optimal performance
-- **Responsive Design**: Fully responsive layout that works seamlessly across all devices
-- **Fast & Optimized**: Leveraging Vite's lightning-fast HMR (Hot Module Replacement)
-- **Type-Safe**: Written in TypeScript for better code quality and developer experience
-- **Production Ready**: Deployed on Vercel with optimized build configuration
-
-## 🛠️ Built With
-
-- [React](https://react.dev/) - UI library
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Vite](https://vitejs.dev/) - Build tool and dev server
-- [ESLint](https://eslint.org/) - Code linting
-- CSS3 - Styling
-
-## 📦 Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/sriram629/SRK-Portifolio.git
-cd SRK-Portifolio
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-4. Open your browser and navigate to `http://localhost:5173`
+Production: `npm run build`, then `npm run preview`. Validation: `npm run lint`.
 
-## 🏗️ Available Scripts
+## Design and implementation
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality checks
+- A metallic connected-core sculpture rotates gently and separates in response to native page scroll. Geometry is generated in code; no model downloads are needed.
+- Project panels enter with perspective and stack on desktop. Mobile uses a normal document flow.
+- Motion respects the operating system's reduced-motion preference. The footer motion control switches to a static CSS sculpture and removes sticky stacking.
+- WebGL failure leaves the CSS illustration visible. Off-screen and hidden-tab rendering stops; pixel density is capped at 1.5. Three.js loads in a separate lazy chunk.
+- Native links, keyboard-accessible project details, visible focus states, a skip link, and a responsive mobile menu remain available.
+- The project interface illustrations are original HTML/CSS studies, explicitly labeled as sample content. They are not screenshots of the deployed applications.
 
-## 📁 Project Structure
+## Editing
 
-```
-SRK-Portifolio/
-├── public/          # Static assets
-├── src/             # Source files
-│   ├── components/  # React components
-│   ├── assets/      # Images, fonts, etc.
-│   └── App.tsx      # Main application component
-├── index.html       # HTML entry point
-├── package.json     # Dependencies and scripts
-├── tsconfig.json    # TypeScript configuration
-└── vite.config.ts   # Vite configuration
-```
+- `src/App.tsx`: sections, project descriptions, and original project illustrations.
+- `src/constants/data.ts`: contact, social, résumé, and repository URLs.
+- `src/components/Scene.tsx`: procedural scene and resource lifecycle.
+- `src/App.css`: layout, visuals, responsive rules.
+- `docs/content-audit.md`: source evidence and unverified claims.
 
-## 🚀 Deployment
+The résumé links use the supplied `Sri_Maddipati_Applied_AI_Engineer_Resume.pdf` without altering its contents.
 
-This portfolio is deployed on [Vercel](https://vercel.com/). Any push to the main branch automatically triggers a new deployment.
+The contact form uses the existing Formspree endpoint in `src/constants/data.ts`. It includes required fields, a honeypot, submission feedback, and timeout/error handling. Email delivery and spam filtering are handled by Formspree; no email credentials are stored in the frontend. Inbox delivery requires a live submission and recipient confirmation.
 
-To deploy your own version:
+## References studied
 
-1. Fork this repository
-2. Sign up for [Vercel](https://vercel.com/)
-3. Import your forked repository
-4. Vercel will automatically detect the Vite configuration and deploy
+- https://david-hckh.com/ — continuity between scenes, camera-led narrative.
+- https://bruno-simon.com/ — a coherent 3D visual identity and explicit quality controls.
+- https://www.14islands.com/ — editorial scale, restraint, and work-first presentation.
+- https://gsap.com/docs/v3/Plugins/ScrollTrigger/ — scroll-linked animation lifecycle.
 
-## 🔧 Configuration
+The design and procedural geometry were created for this portfolio; reference-site assets and code were not copied.
 
-### TypeScript
+## Hosting
 
-The project uses multiple TypeScript configurations:
-- `tsconfig.json` - Base configuration
-- `tsconfig.app.json` - Application-specific settings
-- `tsconfig.node.json` - Node environment settings
-
-### ESLint
-
-ESLint is configured with recommended rules for React and TypeScript. You can customize rules in `eslint.config.js`.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/sriram629/SRK-Portifolio/issues).
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Sriram**
-
-- GitHub: [@sriram629](https://github.com/sriram629)
-- Portfolio: [srk-portifolio.vercel.app](https://srk-portifolio.vercel.app)
-
-## 🙏 Acknowledgments
-
-- Built with [Vite's React-TypeScript template](https://vitejs.dev/guide/)
-- Deployed on [Vercel](https://vercel.com/)
-
----
-
-⭐ If you found this project helpful, please consider giving it a star!
+The project remains a Vite static build. Vercel build command: `npm run build`; output directory: `dist`. The redesigned portfolio is developed on `dev` and proposed for `main` through a pull request. The `OLD` branch preserves the original portfolio at commit `6addf5a`. Merge and production deployment are separate from opening the pull request.
