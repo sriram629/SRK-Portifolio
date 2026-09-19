@@ -1,3 +1,16 @@
+## Update — 19 September 2026
+
+The following user-confirmed updates supersede the initial audit where relevant:
+
+- Chatbot: user confirmed a lightweight routing model selects an LLM based on prompt requirements and difficulty, plus multi-provider failover. The new résumé also confirms Gemini/Groq/Mistral failover. This copy reflects the user's implementation account, not a fresh source-code verification. No latency or uptime guarantees were added.
+- Trusynth: described connected, up-to-date project knowledge for employee onboarding, Jira-specific coding help, and test-script/code-testing support. Avoided equating document retrieval with model weight training.
+- Cegma: named the live application's Express-to-NestJS migration and refactoring into modules/services with container organization.
+- Assessment Portal: user's latest account specifies frontend contributions for student and organization experiences. This takes precedence over the broader backend ownership implied by the résumé.
+- Linked the newly supplied applied-AI résumé PDF unchanged. It still describes Atlas Vector Search; the earlier source audit found a later text-retrieval implementation. Website copy does not claim a current vector-search implementation.
+- Added a labeled email contact form using the original Formspree endpoint mvzzaklw, confirmed unchanged by the user. Recipient inbox delivery has not been verified with a live submission.
+
+---
+
 # Portfolio content audit — 18 September 2026
 
 ## Sources
@@ -36,4 +49,4 @@ Reviewed the portfolio's original source, its deployed page, and the current def
 - The chatbot live link showed Render's service wake-up screen during verification; this is not evidence that the full app or its backend is healthy.
 - Three.js remains a sizable lazy-loaded chunk (about 132 KB gzip); no performance benchmark on physical mobile devices was performed.
 
-The changes are local on branch `dev`; no production deployment was made.
+The changes are prepared on branch `dev` for review into `main`. The original main branch code is preserved on `OLD` at `6addf5a`. No production deployment was performed as part of this audit.

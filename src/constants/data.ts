@@ -1,7 +1,8 @@
 export const DATA = {
   name: "Sri Rama Krishna Chowdary Maddipati",
   image: "/hero.jpeg",
-  resumeUrl: "/SRK_AI_FullStackDev_Resume.pdf",
+  resumeUrl: "/Sri_Maddipati_Applied_AI_Engineer_Resume.pdf",
+  contactEndpoint: "https://formspree.io/f/mvzzaklw",
   email: "maddipatisriramakrishna@gmail.com",
   socials: [
     { name: "GitHub", url: "https://github.com/sriram629" },

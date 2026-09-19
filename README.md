@@ -28,7 +28,9 @@ Production: `npm run build`, then `npm run preview`. Validation: `npm run lint`.
 - `src/App.css`: layout, visuals, responsive rules.
 - `docs/content-audit.md`: source evidence and unverified claims.
 
-The original résumé PDF is retained. Its contents have not been rewritten as part of the website redesign.
+The résumé links use the supplied `Sri_Maddipati_Applied_AI_Engineer_Resume.pdf` without altering its contents.
+
+The contact form uses the existing Formspree endpoint in `src/constants/data.ts`. It includes required fields, a honeypot, submission feedback, and timeout/error handling. Email delivery and spam filtering are handled by Formspree; no email credentials are stored in the frontend. Inbox delivery requires a live submission and recipient confirmation.
 
 ## References studied
 
@@ -41,4 +43,4 @@ The design and procedural geometry were created for this portfolio; reference-si
 
 ## Hosting
 
-The project remains a Vite static build. Vercel build command: `npm run build`; output directory: `dist`. Development changes are local on `dev`; they have not been pushed or deployed.
+The project remains a Vite static build. Vercel build command: `npm run build`; output directory: `dist`. The redesigned portfolio is developed on `dev` and proposed for `main` through a pull request. The `OLD` branch preserves the original portfolio at commit `6addf5a`. Merge and production deployment are separate from opening the pull request.

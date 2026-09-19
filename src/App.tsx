@@ -13,6 +13,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DATA } from "./constants/data";
 import "./App.css";
+import ContactForm from "./components/ContactForm";
 
 const Scene = lazy(() => import("./components/Scene"));
 gsap.registerPlugin(ScrollTrigger);
@@ -26,9 +27,9 @@ const projects = [
     title: "Multimodal AI Chat",
     category: "AI ENGINEERING",
     description:
-      "One conversation. Multiple models. A full-stack chat application with streamed responses, image inputs, and context from uploaded documents.",
+      "A multimodal chatbot with multi-LLM routing and failover. A lightweight model selects an LLM based on the prompt’s requirements and difficulty; if a provider fails, another takes over.",
     detail:
-      "FastAPI streams model responses over WebSockets. Session-scoped document retrieval supplies relevant text, with Gemini, Groq, and Mistral integrations.",
+      "A lightweight routing model evaluates the prompt and selects a suitable model. A fallback chain across Gemini, Groq, and Mistral handles provider failures, while FastAPI and WebSockets stream responses to the React client. Image inputs and document context support richer conversations.",
     stack: ["React", "FastAPI", "WebSockets", "MongoDB"],
     type: "ai",
     source: DATA.projects[0].github,
@@ -202,16 +203,14 @@ function App() {
           },
         );
       });
-      gsap.utils
-        .toArray<HTMLElement>(".reveal")
-        .forEach((el) =>
-          gsap.from(el, {
-            y: 35,
-            opacity: 0,
-            duration: 0.75,
-            scrollTrigger: { trigger: el, start: "top 93%", once: true },
-          }),
-        );
+      gsap.utils.toArray<HTMLElement>(".reveal").forEach((el) =>
+        gsap.from(el, {
+          y: 35,
+          opacity: 0,
+          duration: 0.75,
+          scrollTrigger: { trigger: el, start: "top 93%", once: true },
+        }),
+      );
     }, root);
     return () => ctx.revert();
   }, [motion]);
@@ -446,31 +445,39 @@ function App() {
               <div>
                 <span>01</span>
                 <article>
-                  <h4>From models to applications</h4>
+                  <h4>Trusynth · AI-assisted onboarding</h4>
                   <p>
-                    Worked on Trusynth, a generative AI training platform using
-                    GPT models and ChromaDB, and developed backend services for
-                    AI workflows.
+                    Built an AI knowledge platform using GPT models, ChromaDB,
+                    and connectors to retrieve up-to-date project information
+                    and company documentation. New employees could ask questions
+                    to understand a project, reducing the need for manual
+                    onboarding. The platform also supported developers with
+                    Jira-specific coding tasks and testers with test-script
+                    generation and code testing.
                   </p>
                 </article>
               </div>
               <div>
                 <span>02</span>
                 <article>
-                  <h4>Less infrastructure. More clarity.</h4>
+                  <h4>Cegma · Backend modernization</h4>
                   <p>
-                    Contributed to container consolidation and cloud resource
-                    optimization on AWS.
+                    Migrated the backend of an existing live application from
+                    Express.js to NestJS. Refactored the codebase into modules
+                    and services and reorganized containers to make the system
+                    easier to maintain and extend.
                   </p>
                 </article>
               </div>
               <div>
                 <span>03</span>
                 <article>
-                  <h4>Built for the next iteration</h4>
+                  <h4>Assessment Portal · Frontend development</h4>
                   <p>
-                    Worked on an Express-to-NestJS migration and an online
-                    examination platform using FastAPI and AWS Cognito.
+                    Contributed to frontend development for a coding-assessment
+                    and examination platform, with experiences for both students
+                    and organizations. Helped build the interfaces used to take
+                    assessments and manage the examination workflow.
                   </p>
                 </article>
               </div>
@@ -536,6 +543,7 @@ function App() {
             in mind? <span>Let’s talk.</span>
             <MoveUpRight aria-hidden="true" />
           </a>
+          <ContactForm />
           <div className="contact-bottom">
             <a href={`mailto:${DATA.email}`}>
               {DATA.email}
